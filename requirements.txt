@@ -1,0 +1,17 @@
+
+Flask
+flask-sqlalchemy
+flask-migrate
+flask-bcrypt
+flask-login
+flask-wtf
+email-validator
+Flask-form
+mysql-connector-python
+flask-mail
+flask-bootstrap
+flask-restful
+flask-script
+flask-marshmallow
+flask-session
+python-dotenv

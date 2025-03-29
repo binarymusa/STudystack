@@ -1,0 +1,393 @@
+/* -        -   common PAGE CSS    -       - */
+.nav-item a{
+    color: black;
+    color: #271e1eb7;
+}
+.cust-m{
+    margin-left: 3%;
+}
+
+/* -        -   Welcome.html PAGE CSS    -       - */
+.progress-bar{
+   animation: fillWidht 10s linear forwards;
+}
+@keyframes fillWidht {
+    0%{
+        width: 0%;
+    }
+    25%{
+        width: 20%;
+    }
+    30%{
+        width: 30%;
+    }
+    40%{
+        width: 40%;
+    }
+    50%{
+        width: 50%;
+    }
+    60%{
+        width: 60%;
+    }
+    70%{
+        width: 75%;
+    }
+    80%{
+        width: 80%;
+    }
+    90%{
+        width: 90%;
+    }
+    100%{
+        width: 100%;
+    }
+
+}
+
+/* -        -   Welcome_adm.html PAGE CSS    -       - */
+#key{
+    animation: fillInOut 2s linear 5 forwards;
+}
+@keyframes fillInOut {
+    0%{
+        color: rgb(206, 209, 208);
+    }    
+    100%{
+        color: #037209;
+        text-align: right; 
+    }
+}
+
+#shadow h4 strong{
+    text-shadow: 0 0 2px  #f0f8ff; /* Horizontal offset, vertical offset, blur radius, and color */
+}
+
+/* -        -   market.html PAGE CSS    -       - */
+#bmw,#audi,#merc,#rangerover{
+    height: 100vh; width: 10%;
+    writing-mode: vertical-rl; /* vertical right-to-left */
+    text-orientation: upright; /* Ensures the text orientation is upright */
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.36), transparent);
+    text-shadow: 0 0 2px  #f0f8ff;
+}
+#bmw h4, #merc h4, #audi h4{
+    text-shadow: 0 0 1px  #04533cd0;    
+}
+.bd{
+    background: rgb(39, 38, 38);
+    font-family: monospace;
+}
+#lnk{
+    color: lightskyblue;
+}
+#filtered{
+    animation: lightup 10s linear 2;
+}
+
+/* -        -   filtered.html PAGE CSS    -       - */
+@keyframes lightup {
+    0%{
+        box-shadow: 0 0 20px rgb(43, 89, 187);
+    }
+    20%{
+        box-shadow: 0 0 20px whitesmoke; 
+    }
+    40%{
+        box-shadow: 0 0 20px  rgb(43, 89, 187);
+    }
+    60%{
+        box-shadow: 0 0 20px  whitesmoke;
+    }
+    80%{
+        box-shadow: 0 0 20px  rgb(43, 89, 187);
+    }
+    100%{
+        box-shadow: 0 0 20px  whitesmoke;
+    }
+
+}
+
+/* -        -   cart.html PAGE CSS    -       - */
+#btndance{
+    
+    animation: btndancce 1s linear 4.5;
+}
+@keyframes btndancce {
+    0%{
+        box-shadow: 0 0 3px #6c757d;
+        transform: scale(0.5,0.5);
+        transform: translate(0%, 10%);
+        transform: skewY(2deg)
+    }
+    10%{
+        
+        transform: translate(0%, -10%);
+        transform: skewY(-2deg)
+    }
+    20%{
+        
+        transform: translate(0%, 10%);
+        transform: skewY(2deg)
+    }
+    30%{
+        transform: scale(0.6,0.6);
+        transform: translate(0%, -10%); 
+        transform: skewY(-2deg)       
+    }
+    40%{
+        box-shadow: 0 0 3px #6c757d; 
+        transform: translate(0%, 10%);
+        transform: skewY(2deg)
+    }
+    50%{
+        transform: scale(0.7,0.7);
+        transform: translate(0%, -10%);
+        transform: skewY(-2deg)
+    }
+    60%{
+        transform: translate(0%, 10%);
+        transform: skewY(2deg)
+    }
+    70%{
+        transform: translate(0%, -10%);
+        transform: skewY(-2deg)
+    }
+    80%{
+        box-shadow: 0 0 3px  #6c757d;
+        transform: scale(0.8,0.8);
+        transform: translate(0%, 10%);
+        transform: skewY(2deg)
+    }
+    90%{
+        transform: translate(0%, -10%);
+        transform: skewY(-2deg)
+    }
+    100%{
+        box-shadow: 0 0 3px  #6c757d;
+        transform: scale(1,1);
+        /* transform: translate(0%, 10%); */
+        transform: skewY(0deg)
+    }
+
+}
+#btndance2{    
+    animation: btndancce2 1s linear 4.5;
+}
+@keyframes btndancce2 {
+    0%{
+        box-shadow: 0 0 20px #198754;
+        transform: scale(0.3,0.3);
+        transform: translate(0%, 10%);
+        transform: skewY(2deg)
+    }
+    10%{
+        
+        transform: translate(0%, -10%);
+        transform: skewY(-2deg)
+    }
+    20%{
+        
+        transform: translate(0%, 10%);
+        transform: skewY(2deg)
+    }
+    30%{
+        transform: scale(0.4,0.4);
+        transform: translate(0%, -10%); 
+        transform: skewY(-2deg)       
+    }
+    40%{
+        box-shadow: 0 0 20px #198754; 
+        transform: translate(0%, 10%);
+        transform: skewY(2deg)
+    }
+    50%{
+        transform: scale(0.5,0.5);
+        transform: translate(0%, -10%);
+        transform: skewY(-2deg)
+    }
+    60%{
+        transform: translate(0%, 10%);
+        transform: skewY(2deg)
+    }
+    70%{
+        transform: translate(0%, -10%);
+        transform: skewY(-2deg)
+    }
+    80%{
+        box-shadow: 0 0 20px  #198754;
+        transform: scale(0.8,0.8);
+        transform: translate(0%, 10%);
+        transform: skewY(2deg)
+    }
+    90%{
+        transform: translate(0%, -10%);
+        transform: skewY(-2deg)
+    }
+    100%{
+        box-shadow: 0 0 20px  #198754;
+        transform: scale(1,1);
+        /* transform: translate(0%, 10%); */
+        transform: skewY(0deg)
+    }
+
+}
+
+/* -        -   login & signup PAGE CSS    -       - */
+#container {
+    width: 300px;
+    margin: 10vh auto;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    background: #676d79;
+}
+#container2 {
+    width: 50%;
+    margin: 2vh auto;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #676d79;
+}
+input[type="text"], input[type="number"], input[type="url"], textarea, input[type="email"], input[type="password"], input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+    /* color: #46ad5cc9; */
+}
+.fixed-large{
+    position: fixed;
+}
+.onhover:hover{
+    box-shadow: 0 0 10px  whitesmoke;
+}
+.onhover2{
+    box-shadow: 0 0 10px  whitesmoke;
+}
+
+#foot-links{
+    list-style: none;
+}
+#foot-links li{
+    display: inline-block;
+}
+#foot-links a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+/* -        -   market.html FORM CSS    -       - */
+#model,#price,#year{
+    background-color: #ffffffbb;
+}
+#mainContent{
+    margin-left: 175px;
+}
+#bodyclr{
+    /* background-color: #212529; */
+    background-color: #101828;
+}
+#bodyclr.white{
+    background-color: rgb(224, 224, 224);
+    color: black;
+}
+#fix{
+    opacity: 0.8;
+    background: linear-gradient( rgba(255, 254, 254, 0.281), transparent);
+    transform: translateX(-240px);
+    transition: transform 0.5s ease;
+}
+#fix.show{
+    transform: translateX(10px);
+}
+#side{ 
+    transform: translate(10px, 35vh);
+    /* top: 300px; */
+    /* left: 10px; */
+    transition: transform 0.5s ease;
+}
+#side.move{
+    /* top: 300px; */
+    /* left: 10px; */
+    transform: translate(250px, 35vh);
+}
+#sc{
+    background: #676d79;
+}
+.hidden{
+    display: none;
+}
+/* -        -   payment.html FORM CSS    -       - */
+.payment-form {
+    background-color: #797f8b;
+    /* border-radius: 8px; */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* padding: 30px; */
+    width: 50%;
+    /* height: fit-content; */
+}
+.payment-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+.payment-form .form-group {
+    margin-bottom: 15px;
+}
+.payment-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+.payment-form .form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.payment-form .form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.payment-form .form-group .small-input {
+    width: calc(50% - 5px);
+    display: inline-block;
+    margin-right: 10px;
+}
+.payment-form .form-group .small-input:last-child {
+    margin-right: 0;
+}
+.payment-form button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.payment-form button:hover {
+    background-color: #45a049;
+}
