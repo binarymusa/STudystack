@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}
+                Base page
+            {% endblock %}
+        </title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mediaquery.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+        
+    </head>
+
+    <body style="background-color: #292a2d;">
+        <main class="font-monospace">
+            {% block content %} {% endblock %}
+        </main>
+    </body>
+
+</html>

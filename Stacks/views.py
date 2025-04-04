@@ -8,25 +8,26 @@ from sqlalchemy import or_, and_
 import re
 
 
-stack = Blueprint('stack', __name__)
+study = Blueprint('study', __name__)
 
-stack.route('/')
+@study.route('/')
 def index():
-    if current_user.is_authenticated:
-        topics = Topic.query.filter_by(user_id=current_user.id).all()
-        return render_template('index.html', topics=topics)
-    return render_template('index.html')
+    if not current_user.is_authenticated:
+        return redirect(url_for('auth.login_page'))
 
-@stack.route('/topic/<int:topic_id>')
+    topics = Topic.query.filter_by(user_id=current_user.id).all()
+    return render_template('index.html', topics=topics)
+
+@study.route('/topic/<int:topic_id>')
 @login_required
 def view_topic(topic_id):
     topic = Topic.query.get_or_404(topic_id)
     if topic.author != current_user:
         flash('You can only view your own topics!', 'danger')
-        return redirect(url_for('stack.index'))
+        return redirect(url_for('study.index'))
     return render_template('topic.html', topic=topic)
 
-@stack.route('/create_topic', methods=['POST'])
+@study.route('/create_topic', methods=['POST'])
 @login_required
 def create_topic():
     title = request.form.get('title')
@@ -37,15 +38,15 @@ def create_topic():
     db.session.commit()
     
     flash('Topic created successfully!', 'success')
-    return redirect(url_for('stack.index'))
+    return redirect(url_for('study.index'))
 
-@stack.route('/add_card/<int:topic_id>', methods=['POST'])
+@study.route('/add_card/<int:topic_id>', methods=['POST'])
 @login_required
 def add_card(topic_id):
     topic = Topic.query.get_or_404(topic_id)
     if topic.author != current_user:
         flash('You can only add cards to your own topics!', 'danger')
-        return redirect(url_for('stack.index'))
+        return redirect(url_for('study.index'))
     
     question = request.form.get('question')
     answer = request.form.get('answer')
@@ -55,15 +56,15 @@ def add_card(topic_id):
     db.session.commit()
     
     flash('Card added successfully!', 'success')
-    return redirect(url_for('stack.view_topic', topic_id=topic_id))
+    return redirect(url_for('study.view_topic', topic_id=topic_id))
 
-@stack.route('/review/<int:topic_id>')
+@study.route('/review/<int:topic_id>')
 @login_required
 def review_topic(topic_id):
     topic = Topic.query.get_or_404(topic_id)
     if topic.author != current_user:
         flash('You can only review your own topics!', 'danger')
-        return redirect(url_for('stack.index'))
+        return redirect(url_for('study.index'))
     
     # Simple spaced repetition: get cards due for review
     now = datetime.utcnow()
@@ -74,18 +75,18 @@ def review_topic(topic_id):
     
     if not cards_to_review:
         flash('No cards to review right now!', 'info')
-        return redirect(url_for('stack.view_topic', topic_id=topic_id))
+        return redirect(url_for('study.view_topic', topic_id=topic_id))
     
     return render_template('review.html', card=cards_to_review[0], topic=topic)
 
-@stack.route('/submit_review/<int:card_id>', methods=['POST'])
+@study.route('/submit_review/<int:card_id>', methods=['POST'])
 @login_required
 def submit_review(card_id):
     card = Card.query.get_or_404(card_id)
     topic = card.topic
     if topic.author != current_user:
         flash('You can only review your own cards!', 'danger')
-        return redirect(url_for('stack.index'))
+        return redirect(url_for('study.index'))
     
     difficulty = int(request.form.get('difficulty', 3))
     card.difficulty = difficulty
@@ -103,4 +104,4 @@ def submit_review(card_id):
     db.session.commit()
     
     flash('Review submitted!', 'success')
-    return redirect(url_for('stack.review_topic', topic_id=topic.id))
+    return redirect(url_for('study.review_topic', topic_id=topic.id))

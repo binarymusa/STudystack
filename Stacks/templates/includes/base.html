@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}
+                Base page
+            {% endblock %}
+        </title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mediaquery.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+        
+    </head>
+
+    <body style="background-color: #292a2d;">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}} m-auto" style="width: fit-content;">
+                        <button type="button" class="m1-2 close" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <main class="font-monospace ">
+            {% block content %} {% endblock %}
+        </main>
+
+        <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
+        <script src="{{ url_for('static', filename='javascript/message.js') }}"></script>
+        <script src="{{ url_for('static', filename='javascript/profile.js') }}"></script>
+        <script src="{{ url_for('static', filename='javascript/app.js') }}"></script>
+        <script src="{{ url_for('static', filename='javascript/indexT.js') }}"></script>
+        <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.min.js') }}"></script>       
+    </body>
+
+</html>

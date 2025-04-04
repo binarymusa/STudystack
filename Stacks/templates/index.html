@@ -1,0 +1,94 @@
+{% extends 'includes/base.html' %}
+{% block title %}Landing_page{% endblock %}
+
+{% block content %}
+    <div class=" position-absolute overflow-hidden d-flex start-0 end-0 top-0 bottom-0" >
+        <div class="positon-absolute d-flex flex-grow-1 text-white" style="width: 260px; align-items: stretch; min-height: 0; flex-basis:0%">
+            <div class="text-white start-0 top-0 bottom-0 end-0 position-relative" style="width: 260px; background-color: #212327">
+                <div class=" top-0 bottom-0 end-0 position-absolute" style="width: 260px;max-width: 260px;">
+                    <div class="align-content-between" style="height: 90px; padding: 25px 10px 34px 10px;">
+                        <div class="" style="color: #abb2bd; font-size: 25px; font-weight: 700">
+                            StudyStack
+                        </div>
+                    </div>
+        
+                    <div class="overflow-y-auto " style="padding: 0 10px; height:68%">
+                        <div class="mb-1" style="font-weight: 50;color: #abb2bd" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-menu-up" viewBox="0 0 16 16">
+                                <path d="M7.646 15.854a.5.5 0 0 0 .708 0L10.207 14H14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3.793zM1 9V6h14v3zm14 1v2a1 1 0 0 1-1 1h-3.793a1 1 0 0 0-.707.293l-1.5 1.5-1.5-1.5A1 1 0 0 0 5.793 13H2a1 1 0 0 1-1-1v-2zm0-5H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zM2 11.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 0-1h-8a.5.5 0 0 0-.5.5m0-4a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11a.5.5 0 0 0-.5.5m0-4a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0-.5.5"/>
+                              </svg>
+                            Menu
+                        </div>
+                        <div class="rounded-1 mb-2 align-content-center" data-content="review" id="menu-item">
+                            Review topics
+                        </div>    
+                        <div class="rounded-1 align-content-center" data-content="add"  id="menu-item">
+                            Add topics
+                        </div> 
+                        <div class="rounded-1 align-content-center" data-content="chat" id="menu-item">
+                            Chat AI
+                        </div>                      
+                    </div> 
+        
+                    <div class="align-content-center d-flex flex-column " style="padding: 10px 12px;">
+                        <div class="rounded-3 mb-2 position-relative" style="padding: 9px 12px;cursor: pointer;border:1px solid #abb2bd" id="app">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+                                <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            </svg>
+                            Get App
+                            <div class="appqr p-3 align-content-center" style="background: #3a3a46;"  id="appshare">
+                                QR Code
+                            </div>
+                        </div>
+        
+                        <div class="rounded-3" style="padding: 8px; cursor:pointer" id="profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                            </svg>
+                            My Profile
+                            <div class="dropdown-content p-1" id="profileDropdown">
+                                <a href="#">{{current_user.username}}</a>
+                                <a href="#">Settings</a>                        
+                                <a href="#">Contact us</a>    
+                                <a href="{{url_for('auth.logout')}}">Logout</a>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+                
+            </div>
+    
+            <div class="text-white flex-grow-1 d-flex position-relative " style="max-width: 100%; background-color: #292a2d;  ">
+                <div class="top-0 position-absolute w-100 justify-content-center pt-3 d-flex " style="z-index: 1; height: 56px; background: #333335">
+                    <div class="d-flex" style="padding: 0 32px; ">
+                        <div class="position-absolute" style="width: 100%; height: 32px;top: 100% ; left: 1px;"></div>
+                    </div>                
+                </div>
+    
+                <div class="justify-content-center align-content-center m-auto d-flex position-relative flex-column overflow-y-auto " style="padding: 0 64px; width: 100%; max-width: 800px; min-height: 100%;">
+                    <div class="flex-column text-center flex-grow-1 d-flex justify-content-center align-items-center greetings" style="transform: translateY(); " id="content-area">
+                        <div class="position-relative rounded-4 textbg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+                            </svg>
+                            Pickup from where you left
+                        </div>
+
+                        <div class="flex-row d-flex rounded-3 m-3">
+                            <div class="reviewcds" data-content="review" >Review</div>
+                            <div class="addtps" data-content="add">Add-topics</div>
+                            <div class="chatai" data-content="chat">chat AI</div>
+                        </div>
+                    </div>
+
+                    
+                </div>           
+                
+            </div>
+        </div>
+
+    </div>
+   
+{% endblock %}

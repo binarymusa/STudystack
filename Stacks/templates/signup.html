@@ -1,39 +1,32 @@
 
-{% extends 'includes/base2.html' %}
-{% block title %}
-    signup_page
-{% endblock %}
+{% extends 'includes/base.html' %}
+{% block title %}signup_page{% endblock %}
 
 {% block content %}
-
-<body class="bd">
-
-    <div id="container" >
+    <div id="container" style="margin: 10vh auto;"> 
         <a class="navbar-brand " href="#">
-            <img class="rounded-3" src="static/images/Atmbico3.jpeg" alt="atm" style="width: 40px;height:40px">
+            <img class="rounded-3" src="" alt="-" style="width: 40px;height:40px">
         </a>
-        <h4 class="my-1">Signup Form</h4>
-        <!-- onsubmit="return validateForm()" -->
-        <form id="signupForm" method="POST" action="{{url_for('signup_page')}}">
-            <label for="username">Username:</label>
+
+        <h6 class="my-1">Signup Form</h6>
+        <form id="signupForm" method="POST" action="{{url_for('auth.signup_page')}}">
+            <label for="username">Username</label>
             <!-- required property -->
-            <input  type="text" id="username" name="username" placeholder="i.e,kevin" required > 
+            <input  type="text" id="username" name="username"  required > 
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="i.e,kevin@gmail.com" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"  required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="i.e,123abc..." required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"  required>
 
-            <P><Strong>Have an account?</Strong></P>
-            <a class="btn bg-secondary text-white" href="{{url_for('login_page')}}">
+            <P>Have an account?</P>
+            <a class="btn text-white" style="background-color: #292a2d;" href="{{url_for('auth.login_page')}}">
                 Login
             </a>
 
             <input type="submit" value="Signup">
         </form>
     </div>
-
-    </body>
 
 {% endblock %}

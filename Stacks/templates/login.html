@@ -1,29 +1,26 @@
 
-{% extends 'includes/base2.html' %}
-{% block title %}
-    Login_page
-{% endblock %}
+{% extends 'includes/base.html' %}
+{% block title %}Login_page{% endblock %}
 
 {% block content %}
     <div id="container">
         <a class="navbar-brand" href="#">
-            <img class="rounded-3" src="static/images/Atmbico3.jpeg" alt="atm" style="width: 40px;height:40px">
+            <img class="rounded-3" src="" alt="-" style="width: 40px;height:40px">
         </a>
         
-        <h4 class="my-1">Login Form</h4>
-        <!-- onsubmit="return validateForm()" -->
-        <form id="loginForm" method="POST" action="{{url_for('login_page')}}" >
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <h6 class="">Login Form</h6>
+        <form id="loginForm" method="POST" action="{{url_for('auth.login_page')}}" >
+            <label for="email">Email</label>
+            <input type="email" id="email"  required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <label for="password">Password</label>
+            <input type="password" id="password"  required>
 
-            <P><Strong>No account?</Strong></P>
-            <!-- <button class="btn btn-secondary text-white" id="btn-1">Signup</button> -->
-            <a class="btn bg-secondary text-white" href="{{url_for('signup_page')}}">
+            <P>No account?</P>
+            <a class="btn text-white" style="background-color: #292a2d" href="{{url_for('auth.signup_page')}}">
                 Signup
-            </a>            
+            </a>            <br>
+            <a class="text-white text-decoration-none" href="" id="btn-1">forgot password?</a>
 
             <input type="submit" value="Login">
         </form>
